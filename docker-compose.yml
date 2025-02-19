@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  crewai:
+    build: .
+    volumes:
+      - type: bind
+        source: ${HOME}/Desktop/crewai_project
+        target: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+    env_file:
+      - .env
+    tty: true
+    stdin_open: true
+    command: bash
